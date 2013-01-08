@@ -82,6 +82,8 @@ function ConversationalClock() {
         container.append(resultP);
     }
     
+    // remove previous class
+    resultP.removeClass();
     // add class and message
     resultP.addClass(type);
     resultP.text(String(message));
