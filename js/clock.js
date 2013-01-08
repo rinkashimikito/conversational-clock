@@ -166,12 +166,12 @@ function TimeConverter(hours, minutes) {
      * Returns conjunction ' past ' or ' to '
      */
     this.conjunction = function() {
-		if (minutes <= 30 && minutes > 2) {
-		  conj = ' past ';
-        } else if(minutes >= 30  && minutes < 57) {
-          conj = ' to ';
-        }
-        return conj;
+		  if (minutes <= 30 && minutes > 2) {
+        conj = ' past ';
+      } else if(minutes >= 30  && minutes < 57) {
+        conj = ' to ';
+      }
+      return conj;
     }	
     
     /*
