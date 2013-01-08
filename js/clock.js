@@ -138,24 +138,24 @@ function TimeConverter(hours, minutes) {
      * Converts hours int to words
      */
     this.convertHours = function() {
-		var i = hours;
+		  var i = hours;
 		
 		// get hour conversion
 		if (i >= dictionaryHrs.length) {				
-				i = hours - 12;
-		}
+      i = hours - 12;
+		} 
 		
 		// get next hour if it's later than half past
 		if (minutes > 30) {
-		    i++;
-		    console.log(i);
-		    // exceptions - for minutes before noon and midnight
-		    if (i == 13) {
-				i = 1;
-		    } else if (hours == 23) {
-				i = 0;
-		    } else if (i >= dictionaryHrs.length) {				
-				i = hours - 12;
+      i++;
+      console.log(i);
+      // exceptions - for minutes before noon and midnight
+      if (i == 13) {
+      i = 1;
+      } else if (hours == 23) {
+      i = 0;
+      } else if (i >= dictionaryHrs.length) {				
+      i = hours - 12;
 			}
 		}
 		return dictionaryHrs[i];
@@ -166,13 +166,13 @@ function TimeConverter(hours, minutes) {
      * Returns conjunction ' past ' or ' to '
      */
     this.conjunction = function() {
-		  if (minutes <= 30 && minutes > 2) {
+      if (minutes <= 30 && minutes > 2) {
         conj = ' past ';
       } else if(minutes >= 30  && minutes < 57) {
         conj = ' to ';
       }
       return conj;
-    }	
+    }
     
     /*
      * Returns time converted to words
@@ -180,15 +180,15 @@ function TimeConverter(hours, minutes) {
     this.toString = function() {
 		// Return full value or
 		// setup a prefix for values other than multiplication of 5
-		if (minutes == 0) {
-		  return this.convertHours();
-		} else if (minutes%5 >= 3 || minutes >= 57){
-		   prefix = 'nearly ';
-		   minutesRound = Math.ceil(minutes/5) * 5; 
-		} else if (minutes%5 > 0 && minutes%5 < 3) {
-		   prefix = 'just after ';
-		   minutesRound = Math.floor(minutes/5) * 5;
-		} 
+      if (minutes == 0){
+        return this.convertHours();
+      } else if (minutes%5 >= 3 || minutes >= 57){
+        prefix = 'nearly ';
+        minutesRound = Math.ceil(minutes/5) * 5;
+      } else if (minutes%5 > 0 && minutes%5 < 3) {
+        prefix = 'just after ';
+        minutesRound = Math.floor(minutes/5) * 5;
+      }
 		
 		// return convertedvalue
 		return prefix + this.convertMinsRound() + this.conjunction() + this.convertHours();
