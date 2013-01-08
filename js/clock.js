@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------
  * clock.js 
- * conversational time function.
+ * conversational time class and functions.
  * 
  * IMPORTANT:
  * window.onload at the end of this file
