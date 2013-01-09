@@ -149,7 +149,6 @@ function TimeConverter(hours, minutes) {
         // get next hour if it's later than half past
         if (minutes > 30) {
             i++;
-            console.log(i);
             // exceptions - for minutes before noon and midnight
             if (i == 13) {
                 i = 1;
